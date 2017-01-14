@@ -4,11 +4,12 @@
   "description": "simple terminal interface for saving books",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "author": "Cole Ellison",
   "license": "MIT",
   "dependencies": {
-    "blessed": "^0.1.81"
+    "blessed": "^0.1.81",
+    "fs": "0.0.1-security"
   }
 }
