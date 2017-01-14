@@ -10,6 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "blessed": "^0.1.81",
-    "fs": "0.0.1-security"
+    "fs": "0.0.1-security",
+    "underscore": "^1.8.3"
   }
 }

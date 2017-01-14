@@ -1,8 +1,14 @@
-var blessed = require('blessed');
+#!/usr/bin/env node
+
+const blessed = require('blessed');
+const data = require('./data.js')
+
 
 // Create a screen object.
 var screen = blessed.screen({
-  smartCSR: true
+  smartCSR: true,
+  autoPadding: true,
+  dockBorders: true,
 });
 
 screen.title = 'my window title';
@@ -11,16 +17,15 @@ screen.title = 'my window title';
 var box = blessed.box({
   top: 'center',
   left: 'center',
-  width: '50%',
-  height: '50%',
-  content: 'Hello {bold}world{/bold}!',
+  width: '90%',
+  height: '90%',
   tags: true,
   border: {
     type: 'line'
   },
   style: {
     fg: 'white',
-    bg: 'magenta',
+    bg: 'white',
     border: {
       fg: '#f0f0f0'
     },
