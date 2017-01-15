@@ -1,10 +1,21 @@
 const fs = require('fs');
 const _  = require('underscore');
 
-const expectedKeys = ['author', 'title', 'genre', 'publishYear', 'dateStarted', 'dateFinished', 'summary'];
-const filepath = './books.json'
+const entryKeys = [
+  'id', // integer // set at introduction to the dataset
+  'author', // string
+  'title', // string
+  'genre', // string
+  'publishYear', // integer
+  'dateStarted', // MDN Date object
+  'dateFinished', // MDN Date object
+  'summary', // string // 250 char max
+  'rating', // 0 = subpar // 1 = par // 2 = above par
+  'rated', // bool
+  'process' // -1 = not started // 0 = started // 1 = finished
+];
 
-function init() {
+function init(filepath) {
   fs.open(filepath, 'r', (err, fd) => {
     if (err) {
       if (err.code === 'ENOENT') {
@@ -24,7 +35,7 @@ function init() {
 function addBook(bookData) {
   // book data comes in JSON with the following keys
   // author, title, genre, publishYear, dateStarted, dateFinished, summary 
-  expectedKeys.forEach(elt => {
+  entryKeys.forEach(elt => {
     if (!bookData.hasOwnProperty(elt)) 
       throw Error('Book data must contain the following properties: '+
       'author, title, genre, publishYear, dateStarted, dateFinished, summary')
@@ -37,4 +48,4 @@ function checkData(fd) {
   fs.closeSync(fd)
 }
 
-init()
+init('./books.json')
