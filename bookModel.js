@@ -26,7 +26,8 @@ const stateValues = [-1,0,1];
 function isNotDate(date) { return isNaN(Date.parse(date)) }
 function checkPublishYear(data) { 
   if (isNaN(parseInt(data))) 
-    throw Error('Publish year must be an integer');
+    var msg = `Publish year must be an integer. ${data} is not an integer`
+    throw Error(msg);
 }
 function checkRating(rating) {
   if (rating && ratingValues.indexOf(rating) === -1)
@@ -81,9 +82,15 @@ function Book(bookData) {
   var now = Date.parse
   newBook.state = !newBook.dateStarted  || newBook.dateStarted  > newBook.dateCreated ? -1 : 
                   !newBook.dateFinished || newBook.dateFinished > newBook.dateCreated ?  0 : 1
-
   return newBook
 }
+
+module.exports = Book;
+
+/* ******************************************* */
+//                TESTING  ZONE                //
+/* ******************************************* */
+
 
 console.log(Book({
   author: 'Carlos Ruiz Zafón',
