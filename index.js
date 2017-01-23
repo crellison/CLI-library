@@ -2,8 +2,7 @@
 'use strict';
 
 const blessed = require('blessed');
-const data = require('./data.js')
-
+// currently just a playground...
 
 // Create a screen object.
 var screen = blessed.screen({
