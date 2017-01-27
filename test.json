@@ -1,1 +1,18 @@
-[]
+[
+  {
+    "title": "Where Mathematics Comes From",
+    "rated": false,
+    "author": "George Lakoff",
+    "summary": "",
+    "publishYear": 2000,
+    "dateCreated": 1485522866000
+  },
+  {
+    "title": "Society of Mind",
+    "rated": false,
+    "author": "Marvin Minsky",
+    "summary": "",
+    "publishYear": 1986,
+    "dateCreated": 1485522866000
+  }
+]
